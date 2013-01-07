@@ -28,58 +28,84 @@ class obstaculo(object):
             if rect.Rect.colliderect(pelota.recs[0]):
                 if pelota.tipo==7:
                     if rect.elemento!=1:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=-velX
                         pelota.nVelY=-velY
                 if pelota.tipo==1:
                     if rect.elemento==pelota.tipo:
                         pass
                     if rect.elemento==3:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.tipo=7
                         pelota.nVelX=-velX
                         pelota.nVelY=-velY                        
                     if rect.elemento!=3 and rect.elemento!=1:
+                        sound=pygame.mixer.Sound("fire.wav")
+                        sound.play()
                         self.lista.remove(rect)
                         pelota.tipo=7
                 if pelota.tipo==2:
                     if rect.elemento==pelota.tipo or pelota.tipo==3:
                         pass
                     if rect.elemento==6:
+                        sound=pygame.mixer.Sound("nD.wav")
+                        sound.play()
                         self.lista.remove(rect)                        
                     if rect.elemento!=6 and rect.elemento!=3 and rect.elemento!=pelota.tipo:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=-velX
                         pelota.nVelY=-velY
                 if pelota.tipo==3:
                     if rect.elemento==pelota.tipo:
                         pass
                     if rect.elemento==1:
+                        sound=pygame.mixer.Sound("nD.wav")
+                        sound.play()
                         self.lista.remove(rect)
                     if rect.elemento!=1 and rect.elemento!=3:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=-velX
                         pelota.nVelY=-velY
                 if pelota.tipo==4:
                     if rect.elemento==pelota.tipo or rect.elemento==2:
                         pass         
                     if rect.elemento==3:
+                        sound=pygame.mixer.Sound("leafD.wav")
+                        sound.play()
                         self.lista.remove(rect)
                     if rect.elemento<2 or rect.elemento>4 and rect.elemento!=7:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=-velX
                         pelota.nVelY=-velY
                 if pelota.tipo==5:
                     if rect.elemento==pelota.tipo or rect.elemento==1:
                         pass
                     if rect.elemento==4:
+                        sound=pygame.mixer.Sound("nD.wav")
+                        sound.play()
                         self.lista.remove(rect)
                         pelota.nVelX=-velX
                         #pelota.nVelY=-velY
                     if rect.elemento!=1 and rect.elemento!=4 and rect.elemento!=5:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=-velX
                         pelota.nVelY=-velY
                 if pelota.tipo==6:
                     if rect.elemento==pelota.tipo:
                         pass
                     if rect.elemento!=6 and rect.elemento!=5:
+                        sound=pygame.mixer.Sound("earthD.wav")
+                        sound.play()
                         self.lista.remove(rect)
                     if rect.elemento==5:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=-velX
                         pelota.nVelY=-velY
                         
@@ -87,61 +113,86 @@ class obstaculo(object):
             if rect.Rect.colliderect(pelota.recs[1]):
                 if pelota.tipo==7:
                     if rect.elemento!=1:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=velX
                         pelota.nVelY=-velY
                 if pelota.tipo==1:
                     if rect.elemento==pelota.tipo:
                         pass
                     if rect.elemento==3:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.tipo=7
                         pelota.nVelX=velX
                         pelota.nVelY=-velY
                     if rect.elemento!=3 and rect.elemento!=1:
+                        sound=pygame.mixer.Sound("fire.wav")
+                        sound.play()
                         self.lista.remove(rect)
                         pelota.tipo=7
                 if pelota.tipo==2:
                     if rect.elemento==pelota.tipo or pelota.tipo==3:
                         pass
                     if rect.elemento==6:
+                        sound=pygame.mixer.Sound("nD.wav")
+                        sound.play()
                         self.lista.remove(rect)                        
                     if rect.elemento!=6 and rect.elemento!=3 and rect.elemento!=pelota.tipo:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=velX
                         pelota.nVelY=-velY
                 if pelota.tipo==3:
                     if rect.elemento==pelota.tipo:
                         pass
                     if rect.elemento==1:
+                        sound=pygame.mixer.Sound("nD.wav")
+                        sound.play()
                         self.lista.remove(rect)
                     if rect.elemento!=1 and rect.elemento!=3:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=velX
                         pelota.nVelY=-velY
                 if pelota.tipo==4:
                     if rect.elemento==pelota.tipo or rect.elemento==2:
                         pass         
                     if rect.elemento==3:
+                        sound=pygame.mixer.Sound("leafD.wav")
+                        sound.play()
                         self.lista.remove(rect)
                     if rect.elemento<2 or rect.elemento>4 and rect.elemento!=7:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=velX
                         pelota.nVelY=-velY                        
                 if pelota.tipo==5:
                     if rect.elemento==pelota.tipo or rect.elemento==1:
                         pass
                     if rect.elemento==4:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         self.lista.remove(rect)
                         pelota.nVelX=velX
                         #pelota.nVelY=-velY
                     if rect.elemento!=1 and rect.elemento!=4 and rect.elemento!=5:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=velX
                         pelota.nVelY=-velY
                 if pelota.tipo==6:
                     if rect.elemento==pelota.tipo:
                         pass
                     if rect.elemento!=6 and rect.elemento!=5:
+                        sound=pygame.mixer.Sound("earthD.wav")
+                        sound.play()
                         self.lista.remove(rect)
                     if rect.elemento==5:
+                        sound=pygame.mixer.Sound("boing.wav")
+                        sound.play()
                         pelota.nVelX=velX
-                        pelota.nVelY=-velY                      
-                    
+                        pelota.nVelY=-velY
                         
                 
         
