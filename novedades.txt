@@ -1,0 +1,8 @@
+Documento que especificará las novedades de la versión actual y así mismo permitirá conocer los futuros planes
+para el mejoramiento del juego elements Balls
+
+Actualidad:
+-Ha sido modificado los sonidos por el volumen, de modo que no se escuche una variacion en el nivel del volumen cuando se active ciertos sonidos que sonaban con un volumen muy elevado, esto mejorará la experiencia de juego, para el jugador.
+
+A Futuro:
+-Se tiene pensado mejorar los gráficos de los obstaculos, creando mayor realismo en el juego.

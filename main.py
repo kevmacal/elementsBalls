@@ -4,6 +4,7 @@ import pygame
 import random
 import pelota
 
+#Class
 
 class obstaculo(object):
     def __init__(self):
@@ -28,7 +29,7 @@ class obstaculo(object):
             if rect.Rect.colliderect(pelota.recs[0]):
                 if pelota.tipo==7:
                     if rect.elemento!=1:
-                        sound=pygame.mixer.Sound("boing.wav")
+                        sound=pygame.mixer.Sound("boing.wav")                        
                         sound.play()
                         pelota.nVelX=-velX
                         pelota.nVelY=-velY
@@ -75,6 +76,7 @@ class obstaculo(object):
                         pass         
                     if rect.elemento==3:
                         sound=pygame.mixer.Sound("leafD.wav")
+                        sound.set_volume(0.5)
                         sound.play()
                         self.lista.remove(rect)
                     if rect.elemento<2 or rect.elemento>4 and rect.elemento!=7:
@@ -101,6 +103,7 @@ class obstaculo(object):
                         pass
                     if rect.elemento!=6 and rect.elemento!=5:
                         sound=pygame.mixer.Sound("earthD.wav")
+                        sound.set_volume(0.5)
                         sound.play()
                         self.lista.remove(rect)
                     if rect.elemento==5:
@@ -160,6 +163,7 @@ class obstaculo(object):
                         pass         
                     if rect.elemento==3:
                         sound=pygame.mixer.Sound("leafD.wav")
+                        sound.set_volume(0.5)
                         sound.play()
                         self.lista.remove(rect)
                     if rect.elemento<2 or rect.elemento>4 and rect.elemento!=7:
@@ -175,7 +179,6 @@ class obstaculo(object):
                         sound.play()
                         self.lista.remove(rect)
                         pelota.nVelX=velX
-                        #pelota.nVelY=-velY
                     if rect.elemento!=1 and rect.elemento!=4 and rect.elemento!=5:
                         sound=pygame.mixer.Sound("boing.wav")
                         sound.play()
@@ -186,6 +189,7 @@ class obstaculo(object):
                         pass
                     if rect.elemento!=6 and rect.elemento!=5:
                         sound=pygame.mixer.Sound("earthD.wav")
+                        sound.set_volume(0.5)
                         sound.play()
                         self.lista.remove(rect)
                     if rect.elemento==5:
@@ -194,11 +198,10 @@ class obstaculo(object):
                         pelota.nVelX=velX
                         pelota.nVelY=-velY
                         
-                
-        
     def pintar(self,screen):
         for rect in self.lista:
             rect.pintar(screen)
+
 
 class obsElemento(object):
     def __init__(self,elemento,Rect):
@@ -218,6 +221,7 @@ class obsElemento(object):
             pygame.draw.rect(screen, (224,233,150), self.Rect)
         if self.elemento==6:
             pygame.draw.rect(screen, (176,127,22), self.Rect)
+
                     
 class meta(object):
     def __init__(self):
@@ -237,9 +241,7 @@ class meta(object):
             self.sound2.play()
         if self.direccion>3:
             self.sound3.play()            
-        #print self.direccion
-              
-    
+        
     def pintar(self,screen):
         pygame.draw.rect(screen, (140,121,65), self.rec)
         #pygame.draw.rect(screen, (255,255,255), self.rec)
@@ -247,6 +249,9 @@ class meta(object):
     def collide(self,ball):
         if self.rec.colliderect(ball):
             return True
+
+
+#Main
 
 
 def main():
@@ -385,6 +390,8 @@ def main():
                     velX=0
                 if event.key==pygame.K_LEFT:
                     velX=0
+                    
+        #Pantalla Principal
         
         if caso==0:
             screen.blit(mainBackground,(0,0))                
@@ -398,17 +405,16 @@ def main():
                     pygame.mixer.quit()
                     pygame.mixer.init()
                     pygame.mixer.music.load("mainSound.mp3")
-                    pygame.mixer.music.play()                        
+                    pygame.mixer.music.play()
+        #Jugando
+                                
         if caso==1:
-            #print ballGame.rect.left
-            #llegada.crearMeta()
             acabaTiempo+=1
             if acabaTiempo==50:
                 pygame.mixer.quit()
                 pygame.mixer.init()
                 pygame.mixer.music.load("mainSound.mp3")
                 pygame.mixer.music.play()
-            #print acabaTiempo
             if phaseMov==0 and llegada.collide(ballGame):
                 tipoPelota=1
                 ballGame.cambiarTipo(tipoPelota)
@@ -419,8 +425,7 @@ def main():
                 ballGame.rect.top=510
                 inicia+=1
                 obst=obstaculo()
-                llegada=meta()                
-                #print "hola"
+                llegada=meta()
             if inicia==nivel:
                 obst.crearObstaculos(nivel)
                 llegada.crearMeta()
@@ -468,7 +473,9 @@ def main():
             llegada.pintar(screen)
             if acabaTiempo==2475:
                 caso=3
-            #print ballGame.tipo             
+            
+        #Ayuda
+                     
         if caso==2:
             if soundsCaso2==1:
                 pygame.mixer.quit()
@@ -526,6 +533,8 @@ def main():
                     pygame.mixer.music.load("hWater.mp3")
                     pygame.mixer.music.play()
                     numAyuda=0               
+        
+        #Cuando acaba el tiempo
                 
         if caso==3:
             if acabaTiempo==2475:
@@ -552,13 +561,13 @@ def main():
                 
             
         fps.tick(40)
-        #print stateAnother
-        #print ballGame.rect.left
         
         pygame.display.update()
-        #screen.fill((140,121,65))
         
-    dialogoSalida=0    
+    dialogoSalida=0
+    
+    #Cierre del juego
+       
     while dialogoSalida<90:
         fps.tick(40)
         screen.blit(gameEnd,(0,0))
