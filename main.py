@@ -13,9 +13,9 @@ class meta(object):
     def __init__(self):
         self.rec=pygame.Rect(0,0,100,40)
         self.posX=120
-        self.sound1=pygame.mixer.Sound("left.wav")
-        self.sound2=pygame.mixer.Sound("centre.wav")
-        self.sound3=pygame.mixer.Sound("rigth.wav")     
+        self.sound1=pygame.mixer.Sound("resources\sounds\\left.wav")
+        self.sound2=pygame.mixer.Sound("resources\sounds\\centre.wav")
+        self.sound3=pygame.mixer.Sound("resources\sounds\\rigth.wav")     
     
     def crearMeta(self):
         
@@ -183,14 +183,14 @@ def main():
             screen.blit(mainBackground,(0,0))                
             pygame.display.update()
             if soundMain==0:                
-                pygame.mixer.music.load("soundMainI.mp3")
+                pygame.mixer.music.load("resources\sounds\soundMainI.mp3")
                 pygame.mixer.music.play()
             soundMain+=1
             if soundMain>260 and soundMain<300:
                 if soundMain==261:
                     pygame.mixer.quit()
                     pygame.mixer.init()
-                    pygame.mixer.music.load("mainSound.mp3")
+                    pygame.mixer.music.load("resources\sounds\mainSound.mp3")
                     pygame.mixer.music.play()
         #Jugando
                                 
@@ -199,7 +199,7 @@ def main():
             if acabaTiempo==50:
                 pygame.mixer.quit()
                 pygame.mixer.init()
-                pygame.mixer.music.load("mainSound.mp3")
+                pygame.mixer.music.load("resources\sounds\mainSound.mp3")
                 pygame.mixer.music.play()
             if phaseMov==0 and llegada.collide(ballGame):
                 tipoPelota=1
@@ -266,7 +266,7 @@ def main():
             if soundsCaso2==1:
                 pygame.mixer.quit()
                 pygame.mixer.init()
-                pygame.mixer.music.load("objPr.mp3")
+                pygame.mixer.music.load("resources\sounds\objPr.mp3")
                 pygame.mixer.music.play()
                 screen.blit(standByBackground,(0,0))
                 screen.blit(fuente2.render("Leaf (E)", 0, (15,162,9)),(50,200))
@@ -286,37 +286,37 @@ def main():
                 if numAyuda==1:
                     pygame.mixer.quit()
                     pygame.mixer.init()
-                    pygame.mixer.music.load("hDark.mp3")
+                    pygame.mixer.music.load("resources\sounds\hDark.mp3")
                     pygame.mixer.music.play()
                     numAyuda=0
                 if numAyuda==2:
                     pygame.mixer.quit()
                     pygame.mixer.init()
-                    pygame.mixer.music.load("hFire.mp3")
+                    pygame.mixer.music.load("resources\sounds\hFire.mp3")
                     pygame.mixer.music.play()                    
                     numAyuda=0
                 if numAyuda==3:
                     pygame.mixer.quit()
                     pygame.mixer.init()
-                    pygame.mixer.music.load("hLigth.mp3")
+                    pygame.mixer.music.load("resources\sounds\hLigth.mp3")
                     pygame.mixer.music.play()
                     numAyuda=0
                 if numAyuda==4:
                     pygame.mixer.quit()
                     pygame.mixer.init()
-                    pygame.mixer.music.load("hLeaf.mp3")
+                    pygame.mixer.music.load("resources\sounds\hLeaf.mp3")
                     pygame.mixer.music.play()
                     numAyuda=0
                 if numAyuda==5:
                     pygame.mixer.quit()
                     pygame.mixer.init()
-                    pygame.mixer.music.load("hEarth.mp3")
+                    pygame.mixer.music.load("resources\sounds\hEarth.mp3")
                     pygame.mixer.music.play()
                     numAyuda=0
                 if numAyuda==6:
                     pygame.mixer.quit()
                     pygame.mixer.init()
-                    pygame.mixer.music.load("hWater.mp3")
+                    pygame.mixer.music.load("resources\sounds\hWater.mp3")
                     pygame.mixer.music.play()
                     numAyuda=0               
         
@@ -324,7 +324,7 @@ def main():
                 
         if caso==3:
             if acabaTiempo==2475:
-                sound=pygame.mixer.Sound("endTime.wav")
+                sound=pygame.mixer.Sound("resources\sounds\endTime.wav")
                 sound.play()
             acabaTiempo+=1
             screen.blit(gameEnd,(0,0))
