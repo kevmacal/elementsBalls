@@ -13,10 +13,21 @@ class obstaculo(object):
         for x in range(nivel+1):
             leftRand=random.randrange(0,600)
             topRand=random.randrange(self.posY,self.posY+self.change)
-            width=random.randrange(25,100)
-            heigth=random.randrange(10,40)
+            obstNum=random.randrange(1,5)
+            if obstNum==1:
+                width=50
+                heigth=20
+            if obstNum==2:
+                width=70
+                heigth=20
+            if obstNum==3:
+                width=120
+                heigth=20
+            if obstNum==4:
+                width=90
+                heigth=30            
             self.elemento=random.randrange(1,7)
-            self.lista.append(obsElemento(self.elemento,pygame.Rect(leftRand,topRand,width,heigth)))
+            self.lista.append(obsElemento(self.elemento,pygame.Rect(leftRand,topRand,width,heigth),obstNum))
             self.posY+=10
             self.change+=10       
     
@@ -199,21 +210,77 @@ class obstaculo(object):
             rect.pintar(screen)
 
 
-class obsElemento(object):
-    def __init__(self,elemento,Rect):
+class obsElemento(pygame.sprite.Sprite):
+    def __init__(self,elemento,Rect,obNum):
+        self.imagen=pygame.image.load("resources\images\obs\obF1.jpg")
         self.Rect=Rect
         self.elemento=elemento
+        self.obNum=obNum
         
     def pintar(self,screen):
         if self.elemento==1:
-            pygame.draw.rect(screen, (193,7,12), self.Rect)
+            #pygame.draw.rect(screen, (193,7,12), self.Rect)
+            if self.obNum==1:
+                self.imagen=pygame.image.load("resources\images\obs\obF1.jpg")
+            if self.obNum==2:
+                self.imagen=pygame.image.load("resources\images\obs\obF2.jpg")
+            if self.obNum==3:
+                self.imagen=pygame.image.load("resources\images\obs\obF3.jpg")
+            if self.obNum==4:
+                self.imagen=pygame.image.load("resources\images\obs\obF4.jpg")
+            screen.blit(self.imagen,self.Rect)
         if self.elemento==2:
-            pygame.draw.rect(screen, (18,0,46), self.Rect)
+            #pygame.draw.rect(screen, (18,0,46), self.Rect)
+            if self.obNum==1:
+                self.imagen=pygame.image.load("resources\images\obs\obD1.jpg")
+            if self.obNum==2:
+                self.imagen=pygame.image.load("resources\images\obs\obD2.jpg")
+            if self.obNum==3:
+                self.imagen=pygame.image.load("resources\images\obs\obD3.jpg")
+            if self.obNum==4:
+                self.imagen=pygame.image.load("resources\images\obs\obD4.jpg")
+            screen.blit(self.imagen,self.Rect)
         if self.elemento==3:
-            pygame.draw.rect(screen, (2,2,194), self.Rect)
+            #pygame.draw.rect(screen, (2,2,194), self.Rect)
+            if self.obNum==1:
+                self.imagen=pygame.image.load("resources\images\obs\obT1.jpg")
+            if self.obNum==2:
+                self.imagen=pygame.image.load("resources\images\obs\obT2.jpg")
+            if self.obNum==3:
+                self.imagen=pygame.image.load("resources\images\obs\obT3.jpg")
+            if self.obNum==4:
+                self.imagen=pygame.image.load("resources\images\obs\obT4.jpg")
+            screen.blit(self.imagen,self.Rect)
         if self.elemento==4:
-            pygame.draw.rect(screen, (15,162,9), self.Rect)
+            #pygame.draw.rect(screen, (15,162,9), self.Rect)
+            if self.obNum==1:
+                self.imagen=pygame.image.load("resources\images\obs\obE1.jpg")
+            if self.obNum==2:
+                self.imagen=pygame.image.load("resources\images\obs\obE2.jpg")
+            if self.obNum==3:
+                self.imagen=pygame.image.load("resources\images\obs\obE3.jpg")
+            if self.obNum==4:
+                self.imagen=pygame.image.load("resources\images\obs\obE4.jpg")
+            screen.blit(self.imagen,self.Rect)
         if self.elemento==5:
-            pygame.draw.rect(screen, (224,233,150), self.Rect)
+            #pygame.draw.rect(screen, (224,233,150), self.Rect)
+            if self.obNum==1:
+                self.imagen=pygame.image.load("resources\images\obs\obG1.jpg")
+            if self.obNum==2:
+                self.imagen=pygame.image.load("resources\images\obs\obG2.jpg")
+            if self.obNum==3:
+                self.imagen=pygame.image.load("resources\images\obs\obG3.jpg")
+            if self.obNum==4:
+                self.imagen=pygame.image.load("resources\images\obs\obG4.jpg")
+            screen.blit(self.imagen,self.Rect)
         if self.elemento==6:
-            pygame.draw.rect(screen, (176,127,22), self.Rect)
+            #pygame.draw.rect(screen, (176,127,22), self.Rect)
+            if self.obNum==1:
+                self.imagen=pygame.image.load("resources\images\obs\obR1.jpg")
+            if self.obNum==2:
+                self.imagen=pygame.image.load("resources\images\obs\obR2.jpg")
+            if self.obNum==3:
+                self.imagen=pygame.image.load("resources\images\obs\obR3.jpg")
+            if self.obNum==4:
+                self.imagen=pygame.image.load("resources\images\obs\obR4.jpg")
+            screen.blit(self.imagen,self.Rect)

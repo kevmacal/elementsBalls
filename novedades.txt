@@ -4,7 +4,11 @@ para el mejoramiento del juego elements Balls
 Actualidad:
 -Ha sido modificado los sonidos por el volumen, de modo que no se escuche una variacion en el nivel del volumen cuando se active ciertos sonidos que sonaban con un volumen muy elevado, esto mejorará la experiencia de juego, para el jugador.
 
+-Se mejoró los gráficos de los obstaculos.
+
 -Liberado el primer demo aun no completo, se aceptan sugerencias para arreglar el juego.
+
+-Liberado el segundo demo, versión 1.0 (primer full del juego)
 
 
 

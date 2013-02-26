@@ -48,7 +48,7 @@ class BuildExe():
   
     def run(self):
         
-        extra_datos = ["resources","obstaculo.py","pelota.py"]
+        extra_datos = ["resources"]
         extra_datas = []
         copyrights = "Copyright (c) 2013 DiamondGames"
        
@@ -61,7 +61,7 @@ class BuildExe():
         setup( 
                name="ElementBalls",
                version=self.version,
-               description="Primera Version del juego(Demo-incompleto)",
+               description="Primera Version del juego",
                author="Kevin M. Calderon B.",
                author_email="kevmacal@espol.edu.ec",
                url="nothing",
